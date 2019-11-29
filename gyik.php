@@ -24,6 +24,12 @@ $arr4 = [
 ];
 
 
+function customMerge(array ...$arrays) {
+    $result = [];
+    
+};
+
+
 /*
 Expected result:
   ['tegnapelott','10','1'],
