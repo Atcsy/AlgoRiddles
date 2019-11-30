@@ -27,6 +27,45 @@ $arr4 = [
 function customMerge(array ...$arrays) {
     $result = [];
     
+    foreach ($arrays as $arrayNumber => $arr) {
+        $datesInTheCurrentLoop = [];
+
+        foreach ($arr as $row) {
+          
+            list($key, $value) = $row;
+            $datesInTheCurrentLoop[] = $key;
+  
+            // Ha ez az elso array es a datum nem letezik, akkor letrehozzuk
+            if (!array_key_exists($key, $result) && $arrayNumber == 0) {
+                $result[$key] = [$value];
+                continue;
+            }
+
+            // Ha ez nem az elso array es a datum nem letezik, akkor annyiszor rakunk "-" -et, ahanyadik array-nel eppen jarunk majd hozzaadjuk az erteket
+            if (!array_key_exists($key, $result) && $arrayNumber != 0) {
+                $result[$key] = array_fill(0, $arrayNumber, '-');
+                $result[$key][] = $value;
+                continue;
+            // Ha ez nem az elso array, de a datum mar letezik, akkor csak hozzaadjuk az erteket a meglevo arrayhez
+            }
+ 
+            $result[$key][] = $value;
+        }
+
+        // Amennyiben ez nem az elso array, akkor megnezzuk, hogy mik azok a datumok amik szerepeltek mar a resultban, de a jelenlegi array-bol hianyzik
+        // Amint megvannak ezek a datumok, a jelenlegi kor ertekekent hozzaadunk egy "-"-t
+        if ($arrayNumber != 0) {
+            $missingKeys = array_diff(array_keys($result), $datesInTheCurrentLoop);
+            var_dump($missingKeys);
+            echo "\n";
+            foreach ($missingKeys as $ind => $mKey) {
+                $result[$mKey][] = '-';
+            }
+        }
+    }
+    
+    return $result;
+    
 };
 
 
