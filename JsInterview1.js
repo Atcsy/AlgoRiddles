@@ -1,3 +1,11 @@
+/* Make the following join query with filter, map amd reduce.
+
+SELECT characters.name, SUM( inventory.value ) AS totalValue
+FROM characters, inventory
+WHERE characters.id = invetory.owner
+GROUP BY characters.name
+*/
+
 const inventory = [
   {
     id: 1,
