@@ -52,7 +52,11 @@ const characters = [
 ]
 
 characters.map( c => {
-  let items = inventory.filter( item => item.owner === c.id );
+  let totalValue = 
+    inventory
+      .filter( item => item.owner === c.id )
+      .reduce( ( sum, item ) => item.value + sum, 0 );
+
 
   return {
     name: c.name,
