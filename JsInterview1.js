@@ -56,6 +56,6 @@ characters.map( c => {
 
   return {
     name: c.name,
-    itemCount: item.length
+    itemCount: items.length
   }
 })
