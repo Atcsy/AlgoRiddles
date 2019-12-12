@@ -50,3 +50,12 @@ const characters = [
     level: 1,
   }
 ]
+
+characters.map( c => {
+  let items = inventory.filter( item => item.owner === c.id );
+
+  return {
+    name: c.name,
+    itemCount: item.length
+  }
+})
