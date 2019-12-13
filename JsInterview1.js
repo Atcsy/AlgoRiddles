@@ -63,3 +63,9 @@ characters.map( c => {
     itemCount: items.length
   }
 })
+
+/*
+excepted result
+console.table(characters);
+console.log(inventory);
+*/
