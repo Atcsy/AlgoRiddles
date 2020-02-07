@@ -14,21 +14,26 @@ Currency Count
 */
 
 function coinChangeProblem($amount) { 
-	$notes = array(1000, 500, 200, 100, 
-				50, 20, 10, 5); 
-	$noteCounter = array(0, 0, 0, 0, 0, 
-						0, 0, 0, 0); 
+	$notes = array(1000, 500, 200, 100, 50, 20, 10, 5); 
+	$noteCounter = array(0, 0, 0, 0, 0, 0, 0, 0, 0); 
 	
-	/*
-  Iterate over the $notes array and substract 
-  the value from the $noteCounter array same index.
-  */
+/*
+Iterate over the $notes array and substract 
+the value from the $noteCounter array same index.
+*/
 	
 	
+//  
   
   
-  
-  //Pirint notes
+//Print notes
+
+
+
+//
+	
+	
+	
 } 
 
 
